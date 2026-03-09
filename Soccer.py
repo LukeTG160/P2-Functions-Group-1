@@ -6,7 +6,7 @@
 # Luke G Function 4
 
 
-# Function: introduction
+# Function: introduction(Bryce)
 # This function explains the rules of the game,
 # asks the player for their name, and returns it to the main program.
 def introduction():
@@ -24,7 +24,7 @@ def introduction():
     print()
     print("Welcome, " + sPlayerName + "! Let's play soccer.")
     print()
-# Return the name so main() can use it
+# Return the name so main() can use it (bryce)
     return sPlayerName
 def display_menu():
 
