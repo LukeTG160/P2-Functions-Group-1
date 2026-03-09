@@ -1,54 +1,46 @@
-import random
+# Women's Soccer Season Simulaton
+# Team Members:
+# Bryce Flindt Function 1 and 2
+# Luke Lee Function 5
+# Jordan Function 3
+# Luke G Function 4
 
-# Inputs
-sHomeTeam = input("Enter the name of your home team: ")
-iNumGames = int(input("Enter the number of games that " + sHomeTeam + " will play: "))
-print()
-# Record keeping
-iWins = 0
-iLosses = 0
-dResults = {
-    "Won Against": [],
-    "Lost Against": []
-}
-# Play games
-for iGameNum in range(1, iNumGames + 1):
-    sAwayTeam = input("Enter the name of the away team for game " + str(iGameNum) + ": ")
 
-    iHomeScore = random.randint(0, 3)
-    iAwayScore = random.randint(0, 3)
-    # No ties allowed
-    while iHomeScore == iAwayScore:
-        iHomeScore = random.randint(0, 3)
-        iAwayScore = random.randint(0, 3)
-    # Win / loss tracking
-    if iHomeScore > iAwayScore:
-        iWins = iWins + 1
-        dResults["Won Against"].append(sAwayTeam)
-    else:
-        iLosses = iLosses + 1
-        dResults["Lost Against"].append(sAwayTeam)
-    # Score output
-    print(sHomeTeam + "'s score: " + str(iHomeScore) + " - " + sAwayTeam + "'s score: " + str(iAwayScore))
+# Function: introduction
+# This function explains the rules of the game,
+# asks the player for their name, and returns it to the main program.
+def introduction():
+    print("Welcome to the Women's Soccer Season Simulator!")
     print()
-# Teams won against
-print("Teams won against:")
-for sTeam in dResults["Won Against"]:
-    print("  " + sTeam)
-print()
-# Teams lost against
-print("Teams lost against:")
-for sTeam in dResults["Lost Against"]:
-    print("  " + sTeam)
-print()
-# Final record
-print("Final season record: " + str(iWins) + " - " + str(iLosses))
-# Final message
-fWinPct = iWins / iNumGames
+    print("Rules of the Game:")
+    print("- You will choose a home team.")
+    print("- You will play several games against opponents.")
+    print("- Scores will be randomly generated.")
+    print("- Ties are not allowed.")
+    print()
+# Ask the player for their name
+    sPlayerName = input("Enter your name: ")
+# Welcome message
+    print()
+    print("Welcome, " + sPlayerName + "! Let's play soccer.")
+    print()
+# Return the name so main() can use it
+    return sPlayerName
+def display_menu():
 
-if fWinPct >= 0.75:
-    print("Qualified for the NCAA Soccer Tournament!")
-elif fWinPct >= 0.50:
-    print("You had a good season.")
-else:
-    print("Your team needs to practice!")
+    print("Main Menu")
+    print("1 - Play Season")
+    print("2 - Display Record")
+    print("3 - Quit")
+    print()
+
+    # Get the user's choice
+    sChoice = input("Enter your choice (1-3): ")
+
+    # Return the choice to the main program
+    return sChoice
+# My Test For the functions
+# sPlayerName = introduction()
+# sChoice = display_menu()
+# print("Player name is:", sPlayerName)
+# print("Menu choice is:", sChoice)
