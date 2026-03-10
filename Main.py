@@ -1,5 +1,5 @@
 # Import functions from Soccer.py
-from Soccer import introduction, display_menu
+from Soccer import introduction, display_menu, display_record
 
 def main():
 
